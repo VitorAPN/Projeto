@@ -6,6 +6,7 @@ const prompt = promptSync({ sigint: true });
 
 const alugueis: Aluguel[] = []
 let contadorAtual = 0;
+let teste = 2
 
 function alugarCarro(): void {
     listarCarrosDisponiveis();
