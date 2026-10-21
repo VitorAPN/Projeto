@@ -1,12 +1,6 @@
-Projeto E-Commerce
+Documentação do projeto
 
-Este projeto
+Como executar:
+ - npm init
 
-
-Como compilar
-
-Como Rodar o projeto
-
-Como utilizar
-
-Como cadastrar um cliente
+ 
