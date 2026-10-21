@@ -7,10 +7,10 @@ const prompt = promptSync({ sigint: true });
 const carros: Carro[] = [];
 
 function cadastrarCarro() {
-    const placaInput: string = String(prompt('Digite a placa do carro'));
-    const quilometragemInput: number = Number(prompt('Digite a quilometragem do carro'));
-    const corInput: string = String(prompt('Digite a cor do carro'));
-    const idInput: number = Number(prompt('Digite o id'));
+    const placaInput: string = String(prompt('Digite a placa do carro '));
+    const quilometragemInput: number = Number(prompt('Digite a quilometragem do carro '));
+    const corInput: string = String(prompt('Digite a cor do carro '));
+    const idInput: number = Number(prompt('Digite o id '));
 
     if (carros.find((carro: Carro) => {
         return carro.id === idInput
@@ -37,12 +37,34 @@ function adicionarCarro(carro: Carro): boolean {
     return true
 }
 
+
+function buscarCarrosPelaCor(cor: string): Carro[] {
+    return carros.filter((carro: Carro) => {
+        return carro.cor === cor
+    })
+}
+
+function removerCarro(): void {
+    const idInput: number = Number(prompt('Digite o id do qual você deseja excluir'));
+    const carroIndex = carros.findIndex((carro) => carro.id === idInput);
+    carros.splice(carroIndex);
+}
+
+function buscarCarroPelaQuilometragemMaxima(quilometragem: number): Carro[] {
+    return carros.filter((carro: Carro) => {
+        return carro.quilometragem <= quilometragem
+    })
+}
+
 function listarCarros(): Carro[] {
     return carros
 }
 
 export {
     cadastrarCarro,
-    listarCarros
+    listarCarros,
+    buscarCarrosPelaCor,
+    buscarCarroPelaQuilometragemMaxima,
+    removerCarro
 }
 
