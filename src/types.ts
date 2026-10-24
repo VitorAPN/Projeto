@@ -20,11 +20,18 @@ type Aluguel = {
     preco: number
 }
 
+type FiltrosCarro = {
+    placa?: string | undefined,
+    quilometragem?: number | undefined,
+    cor?: string | undefined
+}
+
 
 export type {
     Carro,
     Cliente,
-    Aluguel
+    Aluguel,
+    FiltrosCarro
 }
 
 

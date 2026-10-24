@@ -8,19 +8,14 @@ const prompt = promptSync({ sigint: true });
 let escolha: number = 0
 
 do {
-    console.log('1 - Cadastrar cliente');
-    console.log('2 - Ver clientes');
-    console.log('3 - Cadastrar carro');
-    console.log('4 - Ver carros');
-    console.log('5 - Alugar carro');
-    console.log('6 - Ver alugueis');
-    console.log('7 - remover carro');
-    console.log('9 - Sair do sitema');
+    console.log('=== Menu Principal ===');
+    console.log('1 - Carros (Ver, Cadastrar, Buscar, Excluir)');
+    console.log('2 - Clientes (Ver, Cadastrar, Buscar, Excluir)');
+    console.log('3 - Alugueis (Alugue seus carros)');
     let escolha = Number(prompt('O que você deseja fazer? '));
     switch (escolha) {
         case 1:
-            cadastrarCliente();
-            break;
+            menuCarros();
         case 2:
             console.log('Seus clientes são: ');
             console.log(verClientes());
